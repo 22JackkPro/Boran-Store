@@ -19,17 +19,17 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="" class="active">Home</a>
+                        <a href="" class="active"></i>Home</a>
                     </li>
                     <li>
                         <a href="">Products</a>
                     </li>
                     <li>
-                        <a href="">About</a>
+                        <a href="">Abouts</a>
                     </li>
                 </ul>
                 <div class="login-signup">
-                    <a href="">Login</a> or <a href="">Signup</a>
+                    <a href=""> Login </a> or <a href=""> Signup </a>
                 </div>
             </nav>
         </div>

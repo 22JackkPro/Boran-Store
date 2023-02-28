@@ -115,9 +115,11 @@ header .header-right .hamburger {
 }
 header .header-right .hamburger div {
     width: 30px;
-    height: 2px;
+    height: 3px;
+    border-radius: 5px;
     margin: 6px 0;
     background: #fff;
+    
 }
 
 
@@ -131,6 +133,10 @@ header .header-right .hamburger div {
     }
     .search-box{
         display: none;
+    }
+    nav .login-signup {
+        display: block;
+        margin-top: 20px;
     }
 }
 
@@ -165,6 +171,10 @@ header .header-right .hamburger div {
     }
     .search-box{
         display: none;
+    }
+    nav .login-signup {
+        display: block;
+        margin-top: 20px;
     }
 }
 @media only screen and (max-width: 500px) {
