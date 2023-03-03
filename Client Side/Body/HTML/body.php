@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="title">
-        <h2>PRODUCT-STORE</h2>
+        <h1>PRODUCT-STORE</h1>
         <h4>Here you can check out our all products!</h4>
     </div>
     <div class="main-card">
@@ -30,13 +30,13 @@
             </div>
             <div class="box">
                  <img src="../img/krorma1.jpg" alt="">
-                 <h5>Krorma</h5>
+                 <h5>Krorma2</h5>
             </div>
-            <div class="box">
+            <div class="box2">
                 <img src="../img/krorma2.jpg" alt="">
                 <h5>Krorma</h5>
             </div>
-            <div class="box">
+            <div class="box2">
                 <img src="../img/krorma3.jpg" alt="">
                 <h5>Krorma</h5>
            </div>
@@ -51,31 +51,31 @@
              <div class="box-detail">
                 <h3>Krorma Khmer</h3>
                 <h3>20$</h3>
-                <h3><a href="">Detail</a></h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
           <div class="box-product">
              <img src="../img/krorma2.jpg" alt="">
              <div class="box-detail">
                 <h3>Krorma Khmer</h3>
-                <h3>20$</h3>
-                <h3><a href="">Detail</a></h3>
+                <h3>50$</h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
-          <div class="box-product">
+          <div class="box-product2">
              <img src="../img/krorma3.jpg" alt="">
              <div class="box-detail">
                 <h3>Krorma Khmer</h3>
-                <h3>20$</h3>
-                <h3><a href="">Detail</a></h3>
+                <h3>10$</h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
-          <div class="box-product">
+          <div class="box-product2">
              <img src="../img/krorma5.jpg" alt="">
              <div class="box-detail">
                 <h3>Krorma Khmer</h3>
-                <h3>20$</h3>
-                <h3><a href="">Detail</a></h3>
+                <h3>10$</h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
       </div>
@@ -87,7 +87,7 @@
              <div class="box-detail">
                 <h3>Krorma Khmer</h3>
                 <h3>20$</h3>
-                <h3><a href="">Detail</a></h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
           <div class="box-product">
@@ -95,30 +95,30 @@
              <div class="box-detail">
                 <h3>Krorma Khmer</h3>
                 <h3>20$</h3>
-                <h3><a href="">Detail</a></h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
-          <div class="box-product">
+          <div class="box-product3">
              <img src="../img/krorma3.jpg" alt="">
              <div class="box-detail">
                 <h3>Krorma Khmer</h3>
-                <h3>20$</h3>
-                <h3><a href="">Detail</a></h3>
+                <h3>50$</h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
-          <div class="box-product">
+          <div class="box-product3">
              <img src="../img/krorma5.jpg" alt="">
              <div class="box-detail">
                 <h3>Krorma Khmer</h3>
-                <h3>20$</h3>
-                <h3><a href="">Detail</a></h3>
+                <h3>50$</h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
       </div>
     </div>
      <!-- end krorma products -->
       <!-- start karom products -->
-    <div class="kaorm"><h2>KAORM PRODUCT</h2></div>
+    <div class="kaorm"><h2>KAORM PRODUCTS</h2></div>
     <div class="main-card">
       <div class="main-box">
           <div class="box-product">
@@ -126,7 +126,7 @@
              <div class="box-detail">
                 <h3>Kaorm Khmer</h3>
                 <h3>10.5$</h3>
-                <h3><a href="">Detail</a></h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
           <div class="box-product">
@@ -134,59 +134,59 @@
              <div class="box-detail">
                 <h3>Karom Khmer</h3>
                 <h3>11.35$</h3>
-                <h3><a href="">Detail</a></h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
-          <div class="box-product">
+          <div class="box-product2">
              <img src="../img/kraom3.jpg" alt="">
              <div class="box-detail">
                 <h3>Karom Khmer</h3>
                 <h3>8.5$</h3>
-                <h3><a href="">Detail</a></h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
-          <div class="box-product">
+          <div class="box-product2">
              <img src="../img/kraom4.jpeg" alt="">
              <div class="box-detail">
                 <h3>Karom Khmer</h3>
                 <h3>12.99$</h3>
-                <h3><a href="">Detail</a></h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
       </div>
     </div>
     <div class="main-card">
       <div class="main-box2k">
-          <div class="box-product">
+          <div class="box-product4">
              <img src="../img/kraom1.jpg" alt="">
              <div class="box-detail">
                 <h3>Karom Khmer</h3>
                 <h3>0.5$</h3>
-                <h3><a href="">Detail</a></h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
-          <div class="box-product">
+          <div class="box-product4">
              <img src="../img/kraom2.jpg" alt="">
              <div class="box-detail">
                 <h3>Karom Khmer</h3>
                 <h3>2.5$</h3>
-                <h3><a href="">Detail</a></h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
-          <div class="box-product">
+          <div class="box-product3">
              <img src="../img/kraom3.jpg" alt="">
              <div class="box-detail">
                 <h3>Karom Khmer</h3>
                 <h3>99$</h3>
-                <h3><a href="">Detail</a></h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
-          <div class="box-product">
+          <div class="box-product3">
              <img src="../img/kraom4.jpeg" alt="">
              <div class="box-detail">
                 <h3>Karom Khmer</h3>
                 <h3>20$</h3>
-                <h3><a href="">Detail</a></h3>
+                <input type="button" value="Detait" alt="" id="detail">
              </div>
           </div>
       </div>
