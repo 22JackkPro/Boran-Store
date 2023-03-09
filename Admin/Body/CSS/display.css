@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.kroma_products {
+    margin: 2rem auto;
+    width: 70vw;
+    height: auto;
+    /* box-shadow: 0 0 1px gray; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.kroma_product {
+    margin-top: 10px;
+    width: 250px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 2px gray;
+    padding: 10px;
+}

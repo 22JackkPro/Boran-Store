@@ -32,14 +32,14 @@
             </nav>
         </div>
         <div class="header-right">
-            <div class="search-box">
-                <div class="search-icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
+            <form class="search-box" method="post" action="../App/Header/HTML/search.php">
                 <div class="search-input">
-                    <input type="text" class="input" placeholder="Search . . .">
+                    <input type="text" name="search" class="input" placeholder="Search . . .">
                 </div>
-            </div>
+                <div class="search-icon">
+                    <input type="submit" value="Search" style="border:none;background:none;">
+                </div>
+            </form>
             <div class="shop">
                 <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
             </div>

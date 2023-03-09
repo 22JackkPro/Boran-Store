@@ -4,9 +4,9 @@
     /**
      * enter your password if you have
      */
-    $myAPIpassowrd = 'God1522kIll7766##';
-    $myAPIname = 'branstore';
-    $conn = new mysqli($myAPI,$myAPIRoot,$myAPIpassowrd,$myAPIname);
+    $myAPIpassowrd = '';
+    $myAPIname = 'boranstore';
+    $conn = new mysqli($myAPI,$myAPIRoot,'',$myAPIname);
 
     if(!$conn)
     {
