@@ -3,11 +3,13 @@
     $search =  $_POST['search'];
     include '../../Body/Database/Body_DB.php';
 
-    $query = "SELECT * FROM `kroma` WHERE TITLE='$search'";
-    // $query = "SELECT * FROM `karom` WHERE TITLE='$search'";
+    
+    $query = "SELECT * FROM `karom` WHERE TITLE='$search'";
+    // $query = "SELECT * FROM `kroma` WHERE TITLE='$search'";
     $result = mysqli_query($conn,$query);
     $row = mysqli_fetch_assoc($result);
 
+    $id = $row['ID'];
     $image = $row['IMAGE'];
     $title = $row['TITLE'];
     $date = $row['DATE'];
