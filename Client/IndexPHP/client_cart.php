@@ -1,6 +1,6 @@
 <!-- ----------------------------------Connection---------------------------------------------- -->
 <?php
-    $conn = new mysqli('localhost','root','','branstore');
+    include '../DB/Body_DB.php';
 ?>
 
 
@@ -16,41 +16,6 @@
     });
 </script>
 
-
-
-<!-- ------------------------------------Selected from kroma table--------------------------- -->
-      <?php
-      
-        $conn = new mysqli('localhost','root','','branstore');
-
-        if(isset($_GET['addID'])){
-            $p_id = $_GET['addID'];
-
-            #--------------------------select row from kroma tablet-------------------------------
-            $p_query = "SELECT * FROM `kroma` WHERE ID=$p_id ";
-            $p_result = mysqli_query($conn,$p_query);
-            $p_row = mysqli_fetch_assoc($p_result);
-            $p_title = $p_row['TITLE'];
-            $p_image = $p_row['IMAGE'];
-            $p_price = $p_row['PRICE'];
-            $p_discount = $p_row['DISCOUNT'];
-
-
-
-            #-------------------------insert to client cart table-----------------------------------------
-            $cli_query = "INSERT INTO  `clientcart`(ID,TITLE,IMAGE,PRICE,DISCOUNT) VALUES ($p_id,'$p_title','$p_image',$p_price,$p_discount)";
-            $cli_result = mysqli_query($conn,$cli_query);
-
-            
-            if($cli_result){
-                header('location:Client_index.php');
-            }else{
-                die(mysqli_error($conn));
-            }
-
-        }
-      
-      ?>
 
 
 
@@ -103,7 +68,10 @@
                 ';
             }
         ?>
-<a href="./delete_from_clientdb.php">sex</a>
+
+
+
+
 
         
         <!-- <li style="width:100%;height:auto;box-shadow: 0 0 1px black;margin-top:10px;" class="rounded p-1 d-flex align-items-center">
@@ -121,7 +89,7 @@
       
 
         
-        <li style="float:right;width:42%;height:auto;margin-top:10px;" class="rounded p-1 d-flex justify-content-between">
+        <li style="float:right;width:30%;height:auto;margin-top:10px;" class="rounded p-1 d-flex justify-content-between">
           <a href="" class="btn btn-outline-warning">Pre order</a>
             <a href="" class="btn btn-outline-primary">Buy</a>
         </li>

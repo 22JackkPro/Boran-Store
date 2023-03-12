@@ -74,7 +74,7 @@
                                 <span><strong>'.$title.'</strong><p>'.$date.'</p></span>
                                 <span><p style="color:red;text-decoration:line-through;">$'.$price.'</p></span>
                                 <span><p style="color:blue;">$'.$final_price.'</p><p style="color:red;text-decoration:line-through;">%'.$discount.'</p></span>
-                                <span><a class="btn btn-outline-warning" href="Client_index.php?addID='.$id.'">Add to cart</a><a  class="btn btn-outline-secondary" href="./kroma_product_Detail.php?id='.$id.' ">Detail</a></span>
+                                <span><a class="btn btn-outline-warning" href="Insert_kroma_to_cart.php?addID='.$id.'">Add to cart</a><a  class="btn btn-outline-secondary" href="./kroma_product_Detail.php?id='.$id.' ">Detail</a></span>
                             </div>
                         </div> 
                         ';
@@ -86,7 +86,7 @@
                             <div class="box-detail">
                                 <span><strong>'.$title.'</strong><p>'.$date.'</p></span>
                                 <span><p style="color:blue;">$'.$price.'</p></span>
-                                <span><a style="margin-top: 35px;" class="btn btn-outline-warning" href="Client_index.php?addID='.$id.'">Add to cart</a><a style="margin-top: 35px;"  class="btn btn-outline-secondary" href="./kroma_product_Detail.php?id='.$id.' ">Detail</a></span>
+                                <span><a style="margin-top: 35px;" class="btn btn-outline-warning" href="Insert_kroma_to_cart.php?addID='.$id.'">Add to cart</a><a style="margin-top: 35px;"  class="btn btn-outline-secondary" href="./kroma_product_Detail.php?id='.$id.' ">Detail</a></span>
                             </div>
                         </div> 
                         ';
@@ -121,7 +121,7 @@
                                 <span><strong>'.$title.'</strong><p>'.$date.'</p></span>
                                 <span><p style="color:red;text-decoration:line-through;">$'.$price.'</p></span>
                                 <span><p style="color:blue;">$'.$final_price.'</p><p style="color:red;text-decoration:line-through;">%'.$discount.'</p></span>
-                                <span><a class="btn btn-outline-warning" href="">Add to cart</a><a  class="btn btn-outline-secondary" href="./khourm_product_Detail.php?id='.$id.'">Detail</a></span>
+                                <span><a class="btn btn-outline-warning" href="Insert_khourm_to_cart.php?addID='.$id.' ">Add to cart</a><a  class="btn btn-outline-secondary" href="./khourm_product_Detail.php?id='.$id.'">Detail</a></span>
                             </div>
                             
                         </div> 
@@ -136,7 +136,7 @@
                             <div class="box-detail">
                                 <span><strong>'.$title.'</strong><p>'.$date.'</p></span>
                                 <span><p style="color:blue;">$'.$price.'</p></span>
-                                <span><a style="margin-top: 35px;" class="btn btn-outline-warning" href="">Add to cart</a><a style="margin-top: 35px;"  class="btn btn-outline-secondary"  href="./khourm_product_Detail.php?id='.$id.'">Detail</a></span>
+                                <span><a style="margin-top: 35px;" class="btn btn-outline-warning" href="Insert_khourm_to_cart.php?addID='.$id.' ">Add to cart</a><a style="margin-top: 35px;"  class="btn btn-outline-secondary"  href="./khourm_product_Detail.php?id='.$id.'">Detail</a></span>
                             </div>
                         </div> 
                         
