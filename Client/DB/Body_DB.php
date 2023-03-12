@@ -4,7 +4,7 @@
     /**
      * enter your password if you have
      */
-    $myAPIpassowrd = 'God1522kIll7766##';
+    $myAPIpassowrd = '';
     $myAPIname = 'branstore';
     $conn = new mysqli($myAPI,$myAPIRoot,$myAPIpassowrd,$myAPIname);
 
