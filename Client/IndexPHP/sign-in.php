@@ -1,36 +1,73 @@
-<html lang="en">
+<?php
+    include('../DB/Body_DB.php');
+?>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- <link rel="stylesheet" href="../CSS/style.css"> -->
     <link rel="stylesheet" href="../CSS/sign-in.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../css/material-dashboard.min.css">
 </head>
 <body>
-    <div class="container_signin" style="width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;
-     background-image:url(../../product_image_storage/wallpaper2you_252314.jpg);background-size:cover;">
-            <form action="" class="frm_sign-in">
-
-            <div class="sign_in">
-                <div class="title">
-                    <h3>WELCOME BACK</h3>
-                    <p>Not registered? <a href="./sign-up.php" style= "color:black;font-weight:500;text-decoration:none; ">Sign up</a> </p>
+    <section class="h-100 gradient-form" style="background-color: white;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6"  >
+                                <div class="card-body p-md-5 mx-md-4">
+                                    <div class="text-center">
+                                    <img src="../image/Users_account/download (1).png"
+                                        style="width: 120px; height:100px;" alt="logo">
+                                    <h4 class="mt-1 mb-5 pb-1">SIGN IN YOUR ACC HERE</h4>
+                                    </div>
+                                    <form class="form-style-9" action="" method="post" name="form1" enctype="multipart/form-data">
+                                        <ul>
+                                            <!-- Admin Account goes here -->
+                                            <li>
+                                                <span>Name</span> <input  name="user_Name" class="field-style field-full align-left" placeholder="Your Name" />
+                                            </li>
+                                            <!-- Admin Password goes here -->
+                                            <li>
+                                                <span>Password</span><input type="password" name="user_password" class="field-style field-full align-none" placeholder="Password" />
+                                            </li>
+                                        </ul>
+                                        <span class="d-flex align-items-center justify-content-center mb-2" > Don't have account ?&nbsp; <a href="./sign-up.php">Sing Up here</a> </span>
+                                        <!-- button goes here -->
+                                        <div class="d-flex align-items-center justify-content-between pb-4">
+                                            <a href="./Client_index.php"><button type="button" name="GoBack" class="btn btn-info">GO Back</button></a>
+                                            <button type="submit" name="Signin" class="btn btn-outline-danger">Sign in</button>                                
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- left side goes here -->
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                <img class="w-100 h-100" src="../image/Users_account/image1.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <input type="text" name="name" id="name" placeholder="Name"class="form-control" style="background:none;border:none;">
-                <input type="password" name="password" id="password" placeholder="Password"class="form-control" style="background:none;border:none;">
-                <input type="submit" name="signin" id="signin" value="Sign In" class="btn btn-secondary" style="border-radius:15px;">
             </div>
-            <div class="image">
-                <img src="../image/Body_Image/image1.jpeg" alt="">
-            </div>
-            
-        </form>
-    </div>
-    
+        </div>
+    </section>
 </body>
-
-
-</html>
+<?php
+    if(isset($_POST['Signin']))
+    {
+       
+        $query = "SELECT * FROM `client` WHERE `Name` = '$_POST[user_Name]' AND `PASSWORD` = '$_POST[user_password]'";
+        $result = mysqli_query($conn,$query);
+        if(mysqli_num_rows($result)==1)
+        {
+            header('Location: ./Client_index.php');
+            
+        }else
+        {
+            echo "<script> alert('Wrong Acc')</script>";
+            ?>
+                <script>
+                        window.location.href = "./sign-up.php";
+                </script>
+            <?php
+        }
+    }
+?>
