@@ -20,19 +20,19 @@
                 <div class="col" id="services">
                     <h3>Services</h3>
                     <div class="links">
-                        <a href="#">Krorma Khmer</a>
-                        <a href="#">Khmer Products</a>
+                        <a href="#">Boran Khmer</a>
+                        <a href="#">Boran Products</a>
                         <a href="#">Support Khmer Products</a>
                     </div>
                 </div>
-                <div class="col" id="useful-links">
+                <!-- <div class="col" id="useful-links">
                     <h3>Links</h3>
                     <div class="links">
                         <a href="#">Services</a>
                         <a href="#">Support</a>
                         <a href="#">Help</a>
                     </div>
-                </div>
+                </div> -->
                 <div class="col" id="contact">
                     <h3>Contact</h3>
                     <div class="contact-details">
