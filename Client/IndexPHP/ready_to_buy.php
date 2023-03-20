@@ -1,20 +1,77 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<div class="container-fluid w-100 h-100 bg-secondary-subtle d-flex align-items-center justify-content-center">
-    
-    <form action="recipe_product.php" method="post" class="d-flex flex-column justify-content-evenly p-5" style="width:500px;height:350px;border-radius:15px;box-shadow: 0 0 3px gray">
-        <h4 style="color:peru">Complete your Name and Password</h4>
-        <p>I don't have an account. <a href="register.php">Register</a></p>
-        <div class="form-floating">
-            <input type="text" name="name" id="name" class="form-control" placeholder="name">
-            <label for="name" style="color:darkblue">Name</label>
-        </div>    
-        <div class="form-floating">
-            <input type="password" name="password" id="password" class="form-control" placeholder="password">
-            <label for="password" style="color:darkblue">Password</label>
+<?php
+    include('../DB/Body_DB.php');
+?>
+<head>
+    <link rel="stylesheet" href="../CSS/sign-in.css">
+    <link rel="stylesheet" href="../css/material-dashboard.min.css">
+</head>
+<body>
+    <section class="h-100 gradient-form" style="background-color: white;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6"  >
+                                <div class="card-body p-md-5 mx-md-4">
+                                    <div class="text-center">
+                                    <img src="../image/Users_account/download (1).png"
+                                        style="width: 120px; height:100px;" alt="logo">
+                                    <h4 class="mt-1 mb-5 pb-1">SIGN IN YOUR ACC HERE</h4>
+                                    </div>
+                                    <form class="form-style-9" action="" method="post" name="form1" enctype="multipart/form-data">
+                                        <ul>
+                                            <!-- Admin Account goes here -->
+                                            <li>
+                                                <span>Name</span> <input  name="user_Name" class="field-style field-full align-left" placeholder="Your Name" />
+                                            </li>
+                                            <!-- Admin Password goes here -->
+                                            <li>
+                                                <span>Password</span><input type="password" name="user_password" class="field-style field-full align-none" placeholder="Password" />
+                                            </li>
+                                        </ul>
+                                        <span class="d-flex align-items-center justify-content-center mb-2" > Don't have account ?&nbsp; <a href="./register.php">Sing Up here</a> </span>
+                                        <!-- button goes here -->
+                                        <div class="d-flex align-items-center justify-content-between pb-4">
+                                            <a href="./Client_index.php"><button type="button" name="GoBack" class="btn btn-info">GO Back</button></a>
+                                            <button type="submit" name="Signin" class="btn btn-outline-danger">Continue</button>                                
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- left side goes here -->
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                <img class="w-100 h-100" src="../image/Users_account/image1.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="button d-flex justify-content-between" style="width:150px">
-            <a href="ordered.php" class="btn btn-secondary">Back</a>
-            <input type="submit" name="submit" class="btn btn-primary" value="Continue">
-        </div> 
-    </form>
-</div>
+    </section>
+</body>
+<?php
+    if(isset($_POST['Signin']))
+    {
+       
+        $query = "SELECT * FROM `client` WHERE `Name` = '$_POST[user_Name]' AND `PASSWORD` = '$_POST[user_password]'";
+        $result = mysqli_query($conn,$query);
+        if(mysqli_num_rows($result)==1)
+        {
+            ?>
+                <script>
+                        window.location.href = "./recipe_product.php";
+                </script>
+            <?php
+            
+        }else
+        {
+            echo "<script> alert('Wrong Acc')</script>";
+            ?>
+                <script>
+                        window.location.href = "./sign-up.php";
+                </script>
+            <?php
+        }
+    }
+?>

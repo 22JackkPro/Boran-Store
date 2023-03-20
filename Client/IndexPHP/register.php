@@ -1,55 +1,74 @@
-
-
-
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-<div class="container-fluid w-100 h-100 bg-secondary-subtle d-flex align-items-center justify-content-center">
-    
-    <form action="" method="post" class="d-flex flex-column justify-content-evenly p-5" style="width:550px;height:450px;border-radius:15px;box-shadow: 0 0 3px gray">
-        <h4 style="color:peru">Complete your Name and Password</h4>
-        <div class="name">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control">
+<?php
+    include('../DB/Body_DB.php');
+?>
+<head>
+    <link rel="stylesheet" href="../CSS/sign-in.css">
+    <link rel="stylesheet" href="../css/material-dashboard.min.css">
+</head>
+<body>
+    <section class="h-100 gradient-form" style="background-color: white;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6"  >
+                                <div class="card-body p-md-5 mx-md-4">
+                                    <div class="text-center">
+                                    <img src="../image/Users_account/download (1).png"
+                                        style="width: 120px; height:100px;" alt="logo">
+                                    <h4 class="mt-1 mb-5 pb-1">SIGN Up </h4>
+                                    </div>
+                                    <form class="form-style-9" action="" method="post" name="form1" enctype="multipart/form-data">
+                                        <ul>
+                                            <!-- Admin Account goes here -->
+                                            <li>
+                                                <span>Name</span> <input  name="user_Name" class="field-style field-full align-left" placeholder="Your Name" />
+                                            </li>
+                                            <!-- Admin Account goes here -->
+                                            <li>
+                                                <span>Email</span> <input type="email"  name="user_email" class="field-style field-full align-left" placeholder="Your Email" />
+                                            </li>
+                                            <!-- Admin Password goes here -->
+                                            <li>
+                                                <span>Password</span><input type="password" name="user_password" class="field-style field-full align-none" placeholder="Password" />
+                                            </li>
+                                        </ul>
+                                        <span class="d-flex align-items-center justify-content-center mb-2" > already have an account ?&nbsp; <a href="./sign-in.php">Sign In here</a> </span>
+                                        <!-- button goes here -->
+                                        <div class="d-flex align-items-center justify-content-between pb-4">
+                                            <a href="./Client_index.php"><button type="button" name="GoBack" class="btn btn-info">GO Back</button></a>
+                                            <button type="SignUP" name="SignUP" class="btn btn-outline-danger">Sign Up</button>                                
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- left side goes here -->
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                <img class="w-100 h-100" src="../image/Users_account/image1.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="email">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="form-control">
-        </div>
-        <div class="password">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control">  
-        </div>
-        <div class="con_password">
-            <label for="con_password">Confirm password</label>
-            <input type="password" name="con_password" id="con_password" class="form-control">
-        </div>
-        
-        <div class="button d-flex justify-content-between" style="width:150px"><a href="ordered.php" class="btn btn-secondary">Back</a><input type="submit" name="submit" class="btn btn-primary" value="Continue"></div> 
-
-</form>
-</div>
-<?php 
-    include '../DB/Body_DB.php';
-    if(isset($_POST['submit'])){
-        $new_name = $_POST['name'];
-        $new_email = $_POST['email'];
-        $new_password = $_POST['password'];
-        $new_con_password = $_POST['con_password'];
-
-        if($new_password == $new_con_password){
-
-            $query = "INSERT INTO `client`(NAME,EMAIL,PASSWORD) VALUES ('$new_name','$new_email','$new_password')";
-            $result = mysqli_query($conn,$query);
-
-            if($result){
-                echo 'Insert succeess';
-            }else{
-                die(mysqli_error($conn));
-            }
-
+    </section>
+</body>
+<?php
+    if(isset($_POST['SignUP']))
+    {
+        if(!empty($_POST['user_Name']) && !empty($_POST['user_email']) && !empty($_POST['user_password']) )
+        {
+            $date = date('Y-m-d');
+            mysqli_query($conn,"INSERT into `client` values(NULL,'$_POST[user_Name]','$_POST[user_email]','$_POST[user_password]',$date)");
+            ?>
+                <script>
+                        window.location.href = "./ready_to_buy.php";
+                </script>
+            <?php
+        }else
+        {
+            echo "<script> alert('You must complete the form')</script>";
         }
-
     }
 ?>
