@@ -27,6 +27,7 @@
                         $Date       =$row["DATE"];
                         $Image      =$row["IMAGE"];
                     }
+                    $final_price;
                     $final_price = $Price-($Price*($Discount/100)); 
                         // conatain image goes here
                         echo '

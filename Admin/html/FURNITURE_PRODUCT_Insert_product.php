@@ -48,7 +48,7 @@
                             <input type="file" name="myImage" class="field-style field-full align-left" placeholder="image" />
                         </li>
                         <!-- button goes here -->
-                        <li>
+                        <li></li>
                             <div class="contain_btn">
                                 <a href="./choose_type_product_insert.php" type="submit" name="btnGoback" id="btnGoback" class="btnGoback">Go Back</a>
                                 <button type="Insert" name="Insert" id="Insert" class="Insert">Insert</button>
