@@ -46,12 +46,17 @@ include '../DB/Body_DB.php';
                 <h4 class="text-uppercase mt-3" >modern sofa</h4>
             </div>
         </div>
-    </div>
+    </div><a href="./product_Detail.php"></a>
+    <!-- start krorma products -->
+    <h2>FURNITURE PRODUCTS</h2>
+        
     <!-- FURNITURE PRODUCT goes here -->
     <div class="container mydiv">
         <div class="row">
             <!-- php goes here-->
             <?php
+
+
             $comm = "SELECT * FROM `furniture_product`";
             $result = mysqli_query($conn, $comm);
 
@@ -67,15 +72,15 @@ include '../DB/Body_DB.php';
                 $final_price    = $price - ($price * ($discount / 100));
                 if ($discount  > 0) {
                     echo '
-                        <div class="col-md-4 productCard mt-5 mb-5 "  style="width: 500px;">
+                        <div class="col-md-4 productCard mt-5 mb-5" style="width: 500px;">
                             <div class="bbb_deals">
                                 <div class="ribbon ribbon-top-right"><span><small class="cross">x </small>'.$qty.'</span></div>
-                                <div class="bbb_deals_title text-uppercase">FURNITURE product</div>
-                                <div class="bbb_deals_slider_container">
+                                <div class="bbb_deals_title text-uppercase">LUXURY FURNITURE</div>
+                                <div class="bbb_deals_slider_container ">
                                     <div class=" bbb_deals_item position-relativ ">
                                         <div class="bbb_deals_image" style="height:350px" >
                                             <div class="dis_numb position-absolute bg-danger">'.$discount.' %OFF</div>
-                                            <img src="'.$image.'" alt="" style="height:350px">
+                                            <img src="'.$image.'" alt="" style="height:350px" >
                                         </div>
                                         <div class="bbb_deals_content">
                                             <div class="bbb_deals_info_line d-flex justify-content-between ">
@@ -88,8 +93,8 @@ include '../DB/Body_DB.php';
                                             </div>
                                             <div class="contain_btn mt-3 ">
                                                 <span class="d-flex justify-content-between">
-                                                    <a class="btn btn-outline-success" href="">Add to cart</a>
-                                                    <a class="btn btn-outline-secondary" href="./FURNITUR_product_Detail.php?id=' . $id . ' ">Detail</a>
+                                                    <a class="btn btn-outline-success" href="client_cart1.php?addID='.$id.' ">Add to cart</a>
+                                                    <a class="btn btn-outline-secondary" href="./LY_FURNITURE_product_Detail.php?id=' . $id . ' ">Detail</a>
                                                 </span>
                                             </div>
                                         </div>
@@ -106,9 +111,9 @@ include '../DB/Body_DB.php';
                                 <div class="ribbon ribbon-top-right"><span><small class="cross">x </small>'.$qty.'</span></div>
                                 <div class="bbb_deals_title text-uppercase">LUXURY FURNITURE</div>
                                 <div class="bbb_deals_slider_container">
-                                    <div class=" bbb_deals_item position-relativ">
+                                    <div class=" bbb_deals_item position-relativ ">
                                         <div class="bbb_deals_image" style="height:370px" >
-                                            <img src="'.$image.'" alt="" style="height:350px" >
+                                            <img src="'.$image.'" alt="" style="height:350px">
                                         </div>
                                         <div class="bbb_deals_content">
                                             <div class="bbb_deals_info_line d-flex flex-row justify-content-between">
@@ -117,8 +122,8 @@ include '../DB/Body_DB.php';
                                             </div>
                                             <div class="contain_btn mt-3 ">
                                                 <span class="d-flex justify-content-between">
-                                                    <a class="btn btn-outline-success" href="">Add to cart</a>
-                                                    <a class="btn btn-outline-secondary" href="./FURNITUR_product_Detail.php?id=' . $id . ' ">Detail</a>
+                                                    <a class="btn btn-outline-success" href="client_cart1.php?addID='.$id.' ">Add to cart</a>
+                                                    <a class="btn btn-outline-secondary" href="./LY_FURNITURE_product_Detail.php?id=' . $id . ' ">Detail</a>
                                                 </span>
                                             </div>
                                         </div>
@@ -133,10 +138,13 @@ include '../DB/Body_DB.php';
         </div>
     </div>
     <!--  LUXURY FURNITURE PRODUCT goes here -->
+    <h2>LUXURY FURNITURE PRODUCTS</h2>
     <div class="container mydiv">
         <div class="row">
             <!-- php goes here-->
             <?php
+
+
             $comm = "SELECT * FROM `ly_furniture_product`";
             $result = mysqli_query($conn, $comm);
 
@@ -173,7 +181,7 @@ include '../DB/Body_DB.php';
                                             </div>
                                             <div class="contain_btn mt-3 ">
                                                 <span class="d-flex justify-content-between">
-                                                    <a class="btn btn-outline-success" href="">Add to cart</a>
+                                                    <a class="btn btn-outline-success" href="client_cart2.php?addID='.$id.' ">Add to cart</a>
                                                     <a class="btn btn-outline-secondary" href="./LY_FURNITURE_product_Detail.php?id=' . $id . ' ">Detail</a>
                                                 </span>
                                             </div>
@@ -202,7 +210,7 @@ include '../DB/Body_DB.php';
                                             </div>
                                             <div class="contain_btn mt-3 ">
                                                 <span class="d-flex justify-content-between">
-                                                    <a class="btn btn-outline-success" href="">Add to cart</a>
+                                                    <a class="btn btn-outline-success" href="client_cart2.php?addID='.$id.' ">Add to cart</a>
                                                     <a class="btn btn-outline-secondary" href="./LY_FURNITURE_product_Detail.php?id=' . $id . ' ">Detail</a>
                                                 </span>
                                             </div>

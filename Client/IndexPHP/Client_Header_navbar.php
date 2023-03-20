@@ -5,10 +5,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css goes here -->
     <link rel="stylesheet" href="../CSS/Client_Header_Navbar.css">
+    <script src="jquery-3.6.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.shop').click(function(){
+                $('.order').css('display','flex');
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <header>
+    <header style="position:sticky;top:0;z-index:100;">
         <div class="header-left">
             <div class="Headerlogo">
                 <img src="../image/Header_Image/Logo.png" alt="">
@@ -52,6 +60,8 @@
             </div>
         </div>
     </header>
+        
+        
 </body>
 <script>
     hamburger = document.querySelector(".hamburger");

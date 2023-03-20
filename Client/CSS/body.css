@@ -187,6 +187,9 @@ div {
 .available_title span {
     font-weight: 700
 }
+.k{
+    color:#64bd7f;
+}
 
 @media only screen and (max-width: 991px) {
     .bbb_deals {
@@ -425,6 +428,9 @@ h4 {
     /* background-color: aqua; */
 }
 
+.k{
+    background-color: #130f3958;
+}
 @media (max-width: 1040px) {
     .card-product {
         grid-template-columns: 47% 47%;
