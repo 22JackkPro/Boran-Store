@@ -70,7 +70,7 @@
                                             <a href="./Client_index.php">Go Back</a>
                                         </div>
                                         <div class="btn">
-                                            <a href="#">Add To Card</a>
+                                            <a href="client_cart1.php?addID='.$id.' ">Add To Card</a>
                                         </div>
                                     </div>
                                 </div> 

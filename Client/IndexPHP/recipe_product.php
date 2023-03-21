@@ -3,7 +3,7 @@
     <div class="list" style="width:350px;height:700px;box-shadow: 0 0 3px gray;border-radius:15px;padding:15px">
 
             <h3 style="width:100%;text-align:center">Thank you!</h3>
-            <h4 style="width:100%;text-align:center">You have buy products from our site.</h4>
+            <h5 style="width:100%;text-align:center">You have buy products from our site.</h5>
 
             <div class="item" style="width:100%;display:flex;justify-content:space-evenly;margin-top:10px;">
                 <p style="width:40%;color:blue;font-size:16pt;">Title</p>
@@ -14,9 +14,9 @@
 
                 include '../DB/Body_DB.php';
 
-                if(isset($_POST['submit'])){
-                    $username = $_POST['name'];
-                    $userpassword = $_POST['password'];
+                if(isset($_POST['Signin'])){
+                    $username = $_POST['user_Name'];
+                    $userpassword = $_POST['user_password'];
 
                     $query1 = "SELECT * FROM `client` WHERE  NAME='$username' ";
                     $result1 = mysqli_query($conn,$query1);
@@ -42,13 +42,8 @@
                         ';
 
                         }
-                        
-                        echo '
-                            <div class="total" style="width:90%;display:flex;justify-content:space-between;margin: 0 auto">
-                                <p style="color:darkblue;font-size:14pt">Total</p>
-                                <p style="color:darkgreen;font-size:14pt;">'.$price.'</p>
-                            </div>
-                        ';
+
+                      
 
 
                     }
@@ -58,7 +53,6 @@
             
             <div class="receptionist" style="width:90%;height:auto;margin: 0 auto;display:flex;flex-direction:column;align-items:center">
                     <h4>Receptionist</h4>
-                    <p>homolokoko</p>
                 </div>
     </div>
                 
