@@ -25,7 +25,8 @@
         $color = $_POST['color'];
         $price = $_POST['price'];
         $qty = $_POST['qty'];
-        $query = "INSERT INTO `ordered`(IMAGE,TITLE,COLOR,PRICE,QTY) VALUES ('$image','$title','$color','$price','$qty')";
+        $total = $price*$qty;
+        $query = "INSERT INTO `ordered`(IMAGE,TITLE,COLOR,PRICE,QTY,TOTAL) VALUES ('$image','$title','$color','$price','$qty','$total')";
         $result = mysqli_query($conn,$query);
     }
     
@@ -72,7 +73,7 @@
         $qty2 = $row['QTY'];
         $total = $price2*$qty2;
     echo '
-    <div class="item d-flex p-2 bg-secondary-subtle w-auto h-auto mt-1 rounded">
+    <div class="item d-flex p-2 bg-info-subtle w-auto h-auto mt-1 rounded">
         <div class="image text-center" style="width:200px;height:200px;">
             <img style="width:100%;height:100%;border-radius:10px" src=" '.$image2.' " alt="">        
         </div>
@@ -96,6 +97,7 @@
     ';
     }
     echo '<a href="ready_to_buy.php" class="btn btn-primary" style="width:400px;margin: 10px auto">Ready to Buy</a>';
+    echo '<a href="Client_index.php" class="btn btn-danger" style="width:400px;margin: 10px auto">back home</a>';
    ?>
 </div>
 

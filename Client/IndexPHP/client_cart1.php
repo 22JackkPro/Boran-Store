@@ -28,6 +28,7 @@
                     <span style="margin-top:15px;display:flex"><strong>Color : </strong>&nbsp;&nbsp;<input style="width:50px;border:none" type="color" value="#64bd7f" name="color" id=""></span>
                     <p style="background-color:greenyellow;margin-top:5px;">Select color of product you want to buy</p>
                     <input type="submit" name="add_to_cart" value="add to cart" class="btn btn-outline-info w-100 mt-auto">
+                    <a href="Client_index.php" class="btn btn-outline-secondary w-100 mt-auto">Cancel</a>
                 </div>
                 
             </form>
