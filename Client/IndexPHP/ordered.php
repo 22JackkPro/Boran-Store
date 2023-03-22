@@ -28,11 +28,11 @@
     if(isset($_POST['add_to_cart'])){
         $image = $_POST['image'];
         $title = $_POST['title'];
-        $color = $_POST['color'];
+       // $color = $_POST['color'];
         $price = $_POST['price'];
         $qty = $_POST['qty'];
         $total = $price*$qty;
-        $query = "INSERT INTO `ordered`(IMAGE,TITLE,COLOR,PRICE,QTY,TOTAL) VALUES ('$image','$title','$color','$price','$qty','$total')";
+        $query = "INSERT INTO `ordered`(IMAGE,TITLE,COLOR,PRICE,QTY,TOTAL) VALUES ('$image','$title','','$price','$qty','$total')";
         $result = mysqli_query($conn,$query);
     }
     

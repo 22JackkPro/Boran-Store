@@ -25,12 +25,9 @@
                     <span style="margin-top:15px;display:flex;"><strong>Price : </strong>&nbsp;&nbsp;'.$price.'<input style="border:none;background:none" type="hidden" name="price" id="" value=" '.$price.' "></span>
                     <span style="margin-top:15px;display:flex;"><strong>Quantity : </strong>&nbsp;&nbsp;<input style="width:100px;margin-top:-8px;" type="number" value="1" name="qty" class="form-control"></span>
                     <p style="background-color:greenyellow;margin-top:5px;">Select qty of product you want to buy</p>
-                    <span style="margin-top:15px;display:flex"><strong>Color : </strong>&nbsp;&nbsp;<input style="width:50px;border:none" type="color" value="#64bd7f" name="color" id=""></span>
-                    <p style="background-color:greenyellow;margin-top:5px;">Select color of product you want to buy</p>
                     <input type="submit" name="add_to_cart" value="add to cart" class="btn btn-outline-info w-100 mt-auto">
                     <a href="Client_index.php" class="btn btn-outline-secondary w-100 mt-auto">Cancel</a>
                 </div>
-                
             </form>
         </div>
         ';
@@ -46,8 +43,4 @@
 
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-
-
-
 
