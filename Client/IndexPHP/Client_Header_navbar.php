@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="shop">
-                <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="ordered.php"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
             <div class="login-signup">
                 <a href="./sign-in.php"> Account <i class="fa-solid fa-user" style="font-size: 14px;"></i></a>
