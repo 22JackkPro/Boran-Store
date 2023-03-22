@@ -19,7 +19,7 @@
                                         style="width: 120px; height:100px;" alt="logo">
                                     <h4 class="mt-1 mb-5 pb-1">SIGN IN YOUR ACC HERE</h4>
                                     </div>
-                                    <form class="form-style-9" action="recipe_product.php" method="post" name="form1" enctype="multipart/form-data">
+                                    <form class="form-style-9" action="receipt.php" method="post" name="form1" enctype="multipart/form-data">
                                         <ul>
                                             <!-- Admin Account goes here -->
                                             <li>

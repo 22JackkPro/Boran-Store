@@ -1,18 +1,24 @@
-<?php
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        .row{
+            margin-top: 20px;
+        }
+        tr th{
+            text-align: center;
+        }
+        tr td{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        td img{
+            width: 90%;
+        }
+    </style>
 
-    // echo 'Quantity = '.$_POST['qty'];
-    // echo '</br>';
-    // echo 'Color = '.'<div class="div" style='.'width:100px;height:100px;background-color:'.$_POST['color'].'></div>';
-    // echo '</br>';
-    // echo 'Title = '.$_POST['title'];
-    // echo '</br>';
-    // echo 'Total ='.$_POST['price']*$_POST['qty'];
-    // echo '</br>';
-    // echo 'Image = '.$_POST['image'];
-
-?>
-
-
+</head>
 
 
 
@@ -37,30 +43,24 @@
 
 
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <div class="odered" style="width:400px;height:auto;margin: 0 auto">
-        <!-- <div class="item d-flex p-2 bg-secondary-subtle w-auto h-auto mt-1">
-            <div class="image text-center" style="width:200px;height:200px;">
-                <img style="width:100%;height:100%" src="../../product_image_storage/1655806680best-furniture-stores-in-bangalore-banner.jpg" alt="">        
-            </div>
-            <div class="list_item" style="width:100px;height:200px;margin-left:10px;">
-                <p>Name : </p>
-                <p>Color : </p>
-                <p>Price : </p>
-                <p>Quantity : </p>
-                <p>Total</p>
-            </div>
-            <div class="item_name" style="width:100px;height:200px;margin-left:5px;text-align:right">
-            <p>funiture1</p>
-            <p style="width:100%;height:10px;margin-top:28px;background:red;text-align:right"></p>
-            <p>100</p>
-            <p>2</p>
-            <p>200</p>
-            </div>
+</head>
+<body>
+    <h1>Your items added to cart.</h1>
+    <table class="container w-50">
+        <tr class="row border-bottom">
+            <th class="col"></th>
+            <th class="col">image</th>
+            <th class="col">title</th>
+            <th class="col">quantity</th>
+            <th class="col">price</th>
+            <th class="col">total</th>
+        </tr>
 
-        </div> -->
 
+<!------------------------------display row from ordered table--------------------------- -->
     <?php 
+
+    
         $query2 = "SELECT * FROM `ordered`";
         $result2 = mysqli_query($conn,$query2);
     while($row = mysqli_fetch_assoc($result2)){
@@ -73,33 +73,57 @@
         $qty2 = $row['QTY'];
         $total = $price2*$qty2;
     echo '
-    <div class="item d-flex p-2 bg-info-subtle w-auto h-auto mt-1 rounded">
-        <div class="image text-center" style="width:200px;height:200px;">
-            <img style="width:100%;height:100%;border-radius:10px" src=" '.$image2.' " alt="">        
-        </div>
-        <div class="list_item" style="width:100px;height:200px;margin-left:10px;font-weight:bold">
-            <p>Name : </p>
-            <p>Color : </p>
-            <p>Price : </p>
-            <p>Quantity : </p>
-            <p>Total</p>
-        </div>
-        <div class="item_name" style="width:100px;height:200px;margin-left:5px;text-align:right">
-        <p>'.$title2.'</p>
-        <p style="width:100%;height:10px;margin-top:28px;background:'.$color2.';text-align:right"></p>
-        <p>'.$price2.'</p>
-        <p>'.$qty2.'</p>
-        <p>'.$total.'</p>
-        </div>
-
-    </div>
+    <tr class="row border-bottom">
+            <td class="col"><a href="ordered.php?deleteOnName='.$title2.' " class="btn btn-outline-danger">delete</a></td>
+            <td class="col"><img src='.$image2.' alt=""></td>
+            <td class="col">'.$title2.'</td>
+            <td class="col">'.$qty2.'</td>
+            <td class="col">$'.$price2.'</td>
+            <td class="col">$'.$total.'</td>
+        </tr>
 
     ';
     }
-    echo '<a href="ready_to_buy.php" class="btn btn-primary" style="width:400px;margin: 10px auto">Ready to Buy</a>';
-    echo '<a href="Client_index.php" class="btn btn-danger" style="width:400px;margin: 10px auto">back home</a>';
-   ?>
-</div>
+
+
+        // ------------------------------------------sum payment---------------------------------------
+        $query3 = "SELECT SUM(TOTAL) AS calculate FROM `ordered`";
+        $result3 = mysqli_query($conn,$query3);
+            while($row3 = mysqli_fetch_assoc($result3)){
+                $payment = $row3['calculate'];
+            }
+    ?>
+
+    <!-- -----------------------------------button for checkout and back------------------------ -->
+        <tr class="row">
+            <td class="col">
+                <a href="Client_index.php" class="btn btn-danger" style="width:100%;margin: 10px auto">back home</a>
+            </td>
+            <td class="col">
+                <a href="ready_to_buy.php" class="btn btn-primary" style="width:100%;margin: 10px auto">Checkout ($<?php echo $payment; ?>)</a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+
+
+<!-- ------------------------------------ delete from ordered table-------------------------------- -->
+<?php
+if(isset($_GET['deleteOnName'])){
+    $name = $_GET['deleteOnName'];
+    $query4 = "DELETE FROM `ordered` WHERE TITLE='$name' ";
+    $result4 = mysqli_query($conn,$query4);
+
+    if($result4){
+        header('location:ordered.php');
+    }else{
+        die(mysqli_error($conn));
+    }
+}
+
+
+?>
 
 
  
