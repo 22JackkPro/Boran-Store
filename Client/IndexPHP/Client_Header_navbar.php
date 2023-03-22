@@ -21,7 +21,7 @@
             <div class="Headerlogo">
                 <img src="../image/Header_Image/Logo.png" alt="">
             </div>
-            <nav>
+            <!-- <nav>
                 <ul>
                     <li>
                         <a href="" class="active"></i>Home</a>
@@ -36,17 +36,17 @@
                 <div class="login-signup">
                     <a href="./sign-in.php"> Login </a> or <a href="./sign-up.php"> Signup </a>
                 </div>
-            </nav>
+            </nav> -->
         </div>
         <div class="header-right">
-            <div class="search-box">
+            <!-- <div class="search-box">
                 <div class="search-icon">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <div class="search-input">
                     <input type="text" class="input" placeholder="Search . . .">
                 </div>
-            </div>
+            </div> -->
             <div class="shop">
                 <a href="ordered.php"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>

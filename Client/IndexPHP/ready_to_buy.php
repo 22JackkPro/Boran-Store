@@ -30,7 +30,7 @@
                                                 <span>Password</span><input type="password" name="user_password" class="field-style field-full align-none" placeholder="Password" />
                                             </li>
                                         </ul>
-                                        <span class="d-flex align-items-center justify-content-center mb-2" > Don't have account ?&nbsp; <a href="./register.php">Sing Up here</a> </span>
+                                        <span class="d-flex align-items-center justify-content-center mb-2" > Don't have account ?&nbsp; <a href="./register.php">Sign Up here</a> </span>
                                         <!-- button goes here -->
                                         <div class="d-flex align-items-center justify-content-between pb-4">
                                             <a href="./Client_index.php"><button type="button" name="GoBack" class="btn btn-outline-danger">GO Back</button></a>
@@ -50,28 +50,3 @@
         </div>
     </section>
 </body>
-<?php
-    if(isset($_POST['Signin']))
-    {
-       
-        $query = "SELECT * FROM `client` WHERE `Name` = '$_POST[user_Name]' AND `PASSWORD` = '$_POST[user_password]'";
-        $result = mysqli_query($conn,$query);
-        if(mysqli_num_rows($result)==1)
-        {
-            ?>
-                <script>
-                        window.location.href = "./recipe_product.php";
-                </script>
-            <?php
-            
-        }else
-        {
-            echo "<script> alert('Wrong Acc')</script>";
-            ?>
-                <script>
-                        window.location.href = "./sign-up.php";
-                </script>
-            <?php
-        }
-    }
-?>

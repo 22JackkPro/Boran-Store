@@ -98,9 +98,6 @@ p{
     </style>
 </head>
 
-<body>
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -116,7 +113,7 @@ p{
             <span>Boran-Store</span>
          </div>
          <div class="client-name">
-            <h4>Client Name :  Sunhor Ly</h4>
+            <h4>Here is your Receipt</h4>
          </div>
          <div class="main-box">
             <span>Qty</span>
@@ -128,67 +125,80 @@ p{
             <?php 
 
                 include '../DB/Body_DB.php';
+                
+                if(isset($_POST['Signin']))
+                {   
+                    $query = "SELECT * FROM `client` WHERE `Name` = '$_POST[user_Name]' AND `PASSWORD` = '$_POST[user_password]'";
+                    $result = mysqli_query($conn,$query);
+                    if(mysqli_num_rows($result)==1)
+                    {
+                        $username = $_POST['user_Name'];
+                        $userpassword = $_POST['user_password'];
 
-                if(isset($_POST['Signin'])){
-                    $username = $_POST['user_Name'];
-                    $userpassword = $_POST['user_password'];
-
-                    $query1 = "SELECT * FROM `client` WHERE  NAME='$username' ";
-                    $result1 = mysqli_query($conn,$query1);
-                    $row1 = mysqli_fetch_assoc($result1);
-                    $cli_name = $row1['NAME'];
-                    $cli_password = $row1['PASSWORD'];
-                    if($cli_name = $username && $cli_password = $userpassword){
-                        $query2 = "SELECT * FROM `ordered`";
-                        $result2 = mysqli_query($conn,$query2);
+                        $query1 = "SELECT * FROM `client` WHERE  NAME='$username' ";
+                        $result1 = mysqli_query($conn,$query1);
+                        $row1 = mysqli_fetch_assoc($result1);
+                        $cli_name = $row1['NAME'];
+                        $cli_password = $row1['PASSWORD'];
                         
-                        while($row2 = mysqli_fetch_assoc($result2)){
-                            $title = $row2['TITLE'];
-                            $qty = $row2['QTY'];
-                            $price = $row2['PRICE'];
-                            $total = $row2['TOTAL'];
-
+                        if($cli_name = $username && $cli_password = $userpassword)
+                        {
+                            $query2 = "SELECT * FROM `ordered`";
+                            $result2 = mysqli_query($conn,$query2);
                             
+                            while($row2 = mysqli_fetch_assoc($result2))
+                            {
+                                $title = $row2['TITLE'];
+                                $qty = $row2['QTY'];
+                                $price = $row2['PRICE'];
+                                $total = $row2['TOTAL'];
 
-                        echo '
-                        <div class="box">
-                            <div class="title">
-                                <span>'.$qty.'</span>
+
+                            echo '
+                            <div class="box">
+                                <div class="title">
+                                    <span>'.$qty.'</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="box">
-                            <div class="title">
-                                <span>'.$title.'</span>
+                            <div class="box">
+                                <div class="title">
+                                    <span>'.$title.'</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="box">
-                            <div class="title">
-                                <span>$'.$price.'</span>
+                            <div class="box">
+                                <div class="title">
+                                    <span>$'.$price.'</span>
+                                </div>
                             </div>
-                        </div>
-                        
-                        ';
+                            
+                            ';
 
-                        }
-                        
-                        $query3 = "SELECT SUM(TOTAL) AS calculate FROM `ordered`";
-                        $result3 = mysqli_query($conn,$query3);
-                        while($row3 = mysqli_fetch_assoc($result3)){
-                            $payment = $row3['calculate'];
-                        }
+                            }
+                            
+                            $query3 = "SELECT SUM(TOTAL) AS calculate FROM `ordered`";
+                            $result3 = mysqli_query($conn,$query3);
+                            while($row3 = mysqli_fetch_assoc($result3))
+                            {
+                                $payment = $row3['calculate'];
+                            }
 
-                        echo '
-                    </div>
-                        <div class="total">
-                            <span>Total  :   $'.$payment.'</span>
-                        </div>
-                        ';
-                      
-                     
-
-
+                            echo '
+                            </div>
+                                <div class="total">
+                                    <span>Total  :   $'.$payment.'</span>
+                                </div>
+                                ';
+                        }  
+                                            
+                    }else
+                    {
+                        echo "<script> alert('Wrong Account')</script>";
+                        ?>
+                            <script>
+                                    window.location.href = "./sign-up.php";
+                            </script>
+                        <?php
                     }
-
                 }
             ?>
             <p>Thank You for Oder</p>
