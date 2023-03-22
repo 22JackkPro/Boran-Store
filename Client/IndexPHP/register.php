@@ -9,7 +9,7 @@
     <section class="h-100 gradient-form" style="background-color: white;">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-xl-10">
+                <div class="col-xl-10" style="border: 5px solid red;">
                     <div class="card rounded-3 text-black">
                         <div class="row g-0">
                             <div class="col-lg-6"  >
@@ -17,7 +17,7 @@
                                     <div class="text-center">
                                     <img src="../image/Users_account/download (1).png"
                                         style="width: 120px; height:100px;" alt="logo">
-                                    <h4 class="mt-1 mb-5 pb-1">SIGN Up </h4>
+                                    <h4 class="mt-1 mb-5 pb-1">SIGN UP </h4>
                                     </div>
                                     <form class="form-style-9" action="" method="post" name="form1" enctype="multipart/form-data">
                                         <ul>

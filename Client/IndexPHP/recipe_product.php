@@ -8,7 +8,7 @@
 
             <div class="item" style="width:100%;display:flex;justify-content:space-evenly;margin-top:10px;">
                 <p style="width:40%;color:blue;font-size:16pt;">Title</p>
-                <p style="width:20%;color:blue;font-size:16pt;">Quantity</p>
+                <p style="width:20%;color:blue;font-size:16pt;">Quaility</p>
                 <p style="width:30%;color:blue;font-size:16pt;text-align:right">Price</p>
             </div>
             <?php 
