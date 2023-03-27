@@ -22,10 +22,10 @@
                 </div>
                 <div class="detai w-50 d-flex flex-column p-3">
                     <span style="display:flex"><strong>Title : </strong>&nbsp;&nbsp;'.$title.'<input style="border:none;background:none" type="hidden" name="title" id="" value=" '.$title.' "></span>
-                    <span style="margin-top:15px;display:flex;"><strong>Price : </strong>&nbsp;&nbsp;'.$price.'<input style="border:none;background:none" type="hidden" name="price" id="" value=" '.$price.' "></span>
+                    <span style="margin-top:15px;display:flex;"><strong>Price : </strong>&nbsp;&nbsp;'.$price.' $<input style="border:none;background:none" type="hidden" name="price" id="" value=" '.$price.' "></span>
                     <span style="margin-top:15px;display:flex;"><strong>Quantity : </strong>&nbsp;&nbsp;<input style="width:100px;margin-top:-8px;" type="number" value="1" name="qty" class="form-control"></span>
                     <p style="background-color:greenyellow;margin-top:5px;">Select qty of product you want to buy</p>
-                    <input type="submit" name="add_to_cart" value="add to cart" class="btn btn-outline-info w-100 mt-auto">
+                    <input type="submit" name="add_to_cart" value="add to cart" class="btn btn-outline-info w-100">
                     <a href="Client_index.php" class="btn btn-outline-secondary w-100 mt-auto">Cancel</a>
                 </div>
             </form>
